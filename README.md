@@ -1,10 +1,19 @@
-# MeanStackCrudApp
+# MeanStackCrudApp - Angular6, NodeJS, Express, mongoDB
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.1.4.
 
 ## Development server
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+Run `npm run start` to start the dev server for Angular6 App. Navigate to `http://localhost:3000/`. 
+
+## Express/Node server
+
+Run `npm run dev` to start the Express/Node based web-server for APIs. Navigate to `http://localhost:4000/`.
+
+## mongoDB DB Server
+
+Install from https://www.mongodb.com.
+Install Studio 3T from https://studio3t.com.
 
 ## Code scaffolding
 
