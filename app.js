@@ -10,7 +10,7 @@ var app = express();
 
 // mongoose for DB architecture
 var mongoose = require('mongoose');
-mongoose.connect('mongodb://localhost/mean-stack-crud-app', { promiseLibrary: require('bluebird') })
+mongoose.connect('mongodb://localhost/mean-stack-crud-app', { useNewUrlParser: true, promiseLibrary: require('bluebird') })
   .then(() =>  console.log('connection successful'))
   .catch((err) => console.error(err));
 

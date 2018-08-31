@@ -16,7 +16,7 @@
     j.src =
       'https://www.googletagmanager.com/gtm.js?id=' + i + dl;
     f.parentNode.insertBefore(j, f);
-  })(window, document, 'script', 'dataLayer', 'GTM-KD9KPV');</script>
+  })(window, document, 'script', 'dataLayer', 'GTM-XXXXXX');</script>
   <!-- End Google Tag Manager -->
 
   <!-- start : meta tags -->
@@ -98,25 +98,6 @@
 </p>
 <![endif]-->
 
-<script>
-  $(function () {
-    var _url = window.location.href;
-    _url = _url.replace(/^.*\/\/[^\/]+/, '');
-    $('#leftNav a[href$="' + _url + '"]').closest('li').addClass('active');
-    var _urlSuff = _url.split("/")[1];
-    if (_urlSuff === 'list') {
-      $('app-root').attr('componentName', 'contactUs');
-    } else if (_urlSuff === 'online-reg') {
-      $('app-root').attr('componentName', 'onlineReg');
-    } else if (_urlSuff === 'medical-alarm-registration') {
-      $('app-root').attr('componentName', 'medicalAlarmRegistration');
-    } else if (_urlSuff === 'commercial-works') {
-      $('app-root').attr('componentName', 'commercialWorks');
-    } else if (_urlSuff === 'ict-form') {
-      $('app-root').attr('componentName', 'ictForm');
-    }
-  });
-</script>
 
 <!-- start : Google Analytics -->
 <script>

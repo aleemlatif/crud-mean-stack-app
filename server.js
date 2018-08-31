@@ -11,7 +11,7 @@ const router = express.Router();
 app.use(cors());
 app.use(bodyParser.json());
 
-mongoose.connect('mongodb://localhost/Issues'); // Issues is the DB name here
+mongoose.connect('mongodb://localhost/Issues', { useNewUrlParser: true }); // Issues is the DB name here
 const connection = mongoose.connection;
 
 connection.once('open', () => {
