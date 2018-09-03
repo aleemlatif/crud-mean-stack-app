@@ -18,6 +18,9 @@ import {
   MatSnackBarModule
 } from '@angular/material';
 
+import {DataTableModule, SharedModule, OrderListModule} from 'primeng/primeng';
+import { TableModule } from 'primeng/table';
+
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {ListComponent} from './components/list/list.component';
@@ -46,6 +49,10 @@ const routes: Routes = [
     RouterModule.forRoot(routes),
     HttpClientModule,
     ReactiveFormsModule,
+    DataTableModule,
+    OrderListModule,
+    SharedModule,
+    TableModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,

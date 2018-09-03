@@ -4,7 +4,56 @@
     <button mat-raised-button color="primary" routerLink="/create">Create New Issue</button>
     <br><br>
     <mat-divider></mat-divider>
-    <br>
+
+    <!-- start : p-table -->
+    <p-table [columns]="fieldsAndCols" [value]="issues" sortMode="single" sortField="title" class="STTable">
+
+      <ng-template pTemplate="header" let-columns>
+        <tr>
+          <th *ngFor="let col of columns" class="tableHeaders">
+            {{col.colHeader}}
+          </th>
+        </tr>
+
+      </ng-template>
+      <ng-template pTemplate="body" let-rowData let-columns="columns">
+        <tr>
+          <td *ngFor="let col of columns">
+            {{rowData[col.fieldName]}}
+
+            <span *ngIf="col.colHeader == 'actions'">
+              <button mat-button color="primary" (click)="editIssue(rowData['_id'])">Edit</button>
+              <button mat-button color="warn" (click)="deleteIssue(rowData['_id'])">Delete</button>
+            </span>
+          </td>
+
+        </tr>
+      </ng-template>
+
+      <ng-template pTemplate="summary">
+        There are {{issues?.length}} issues
+      </ng-template>
+
+    </p-table>
+    <!-- // end : p-table -->
+
+    <!-- start : p-dataTable -->
+    <!--<p-dataTable [value]="issues">
+      <p-column field="title" header="title" [sortable]="true"></p-column>
+      <p-column field="responsible" header="responsible" [sortable]="true"></p-column>
+      <p-column field="severity" header="severity"></p-column>
+      <p-column field="status" header="status"></p-column>
+      <p-column  header="actions">
+        <div>
+              <button mat-button color="primary" (click)="editIssue(issues['_id'])">Edit</button>
+              <button mat-button color="warn" (click)="deleteIssue(issues['_id'])">Delete</button>
+        </div>
+      </p-column>
+    </p-dataTable>-->
+    <!-- // end : p-dataTable -->
+
+    <!-- start : mat-table -->
+    <!--
     <table mat-table [dataSource]="issues">
       <ng-container matColumnDef="title">
         <th mat-header-cell *matHeaderCellDef> Title </th>
@@ -36,6 +85,8 @@
 
       <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
       <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-    </table>
+    </table>-->
+    <!-- // end : mat-table -->
+
   </mat-card>
 </div>
