@@ -51,7 +51,7 @@ export class EditComponent implements OnInit {
 
   updateIssue(title, responsible, description, severity, status) {
 
-    console.log(' updateIssue: ', this.id, title, responsible, description, severity, status);
+    console.log('Issue updated: ', this.id, title, responsible, description, severity, status);
 
     this.issueService.updateIssue(this.id, title, responsible, description, severity, status).subscribe(() => {
       this.snackBar.open('Issue updated successfully', 'OK', {

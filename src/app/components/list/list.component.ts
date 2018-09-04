@@ -6,15 +6,6 @@ import {HttpClient} from '@angular/common/http';
 import {Issue} from '../../issue.model';
 import {IssueService} from '../../issue.service';
 
-export interface Car {
-  vin?;
-  year?;
-  brand?;
-  color?;
-  price?;
-  saleDate?;
-}
-
 @Component({
   selector: 'app-list',
   templateUrl: './list.component.html',
@@ -24,13 +15,11 @@ export class ListComponent implements OnInit {
 
   issues: Issue[];
   fieldsAndCols: any[];
-  cars: Car[];
-
+  first = 0;
   constructor(private issueService: IssueService, private router: Router, private http: HttpClient) {
   }
 
   ngOnInit() {
-    this.getCars();
     this.fetchIssues();
     this.fieldsAndCols = [{fieldName: 'title', colHeader: 'title'},
       {fieldName: 'responsible', colHeader: 'responsible'},
@@ -38,15 +27,6 @@ export class ListComponent implements OnInit {
       {fieldName: 'status', colHeader: 'status'},
       {fieldName: 'actions', colHeader: 'actions'}
     ];
-  }
-
-  getCars() {
-    return this.http.get<any>('assets/data/cars.json')
-      .toPromise()
-      .then(res => <Car[]>res.data)
-      .then(data => {
-        this.cars = data;
-      });
   }
 
   fetchIssues() {

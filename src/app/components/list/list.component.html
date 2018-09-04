@@ -6,11 +6,11 @@
     <mat-divider></mat-divider>
 
     <!-- start : p-table -->
-    <p-table [columns]="fieldsAndCols" [value]="issues" sortMode="single" sortField="title" class="STTable">
+    <p-table [columns]="fieldsAndCols" [value]="issues" sortMode="multiple" [paginator]="true" [rows]="2" [first]="first" class="STTable">
 
       <ng-template pTemplate="header" let-columns>
         <tr>
-          <th *ngFor="let col of columns" class="tableHeaders">
+          <th *ngFor="let col of columns" class="tableHeaders" [pSortableColumn]="col.fieldName">
             {{col.colHeader}}
           </th>
         </tr>
