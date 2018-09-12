@@ -60,4 +60,17 @@ export class EditComponent implements OnInit {
     });
   }
 
+  onTextChanged(e) {
+    if (e.source === 'api') {
+      return;
+    }
+    const textValue = e.textValue;
+    const htmlValue = e.htmlValue;
+    this.updateForm['description'] = e.textValue;
+    console.log('onTextChanged: ', e);
+  }
+  onSelectionChanged(e) {
+    console.log('onSelectionChanged: ', e);
+  }
+
 }
