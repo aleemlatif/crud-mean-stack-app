@@ -20,6 +20,7 @@ import {
 
 import {DataTableModule, SharedModule, OrderListModule} from 'primeng/primeng';
 import { TableModule } from 'primeng/table';
+import { EditorModule } from 'primeng/editor';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
@@ -53,6 +54,7 @@ const routes: Routes = [
     OrderListModule,
     SharedModule,
     TableModule,
+    EditorModule,
     MatToolbarModule,
     MatFormFieldModule,
     MatInputModule,
