@@ -24,6 +24,19 @@
           <mat-option value="High">High</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <mat-form-field class="field-full-width">
+        <mat-select placeholder="Status" formControlName="status" #status [(value)]="selectedStatus">
+          <mat-option value="Open">Open</mat-option>
+          <mat-option value="In Progress">In Progress</mat-option>
+          <mat-option value="Done">Done</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <label for="creationDate">Description</label>
+      <p-calendar name="creationDate" id="creationDate" formControlName="creationDate" dateFormat="dd-mm-yyyy"></p-calendar>
+
+      <br><br>
       <mat-divider></mat-divider>
       <br><br>
       <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;

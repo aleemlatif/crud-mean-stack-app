@@ -15,6 +15,7 @@ export class EditComponent implements OnInit {
   id: String;
   selectedSeverity: String;
   selectedStatus: String;
+  descriptionEditor: string;
   issue: any = {};
   updateForm: FormGroup;
 
@@ -32,6 +33,7 @@ export class EditComponent implements OnInit {
         this.updateForm.get('description').setValue(this.issue.description);
         this.updateForm.get('severity').setValue(this.issue.severity);
         this.updateForm.get('status').setValue(this.issue.status);
+        this.updateForm.get('creationDate').setValue(this.issue.creationDate);
 
         this.selectedSeverity = this.issue.severity;
         this.selectedStatus = this.issue.status;
@@ -45,15 +47,16 @@ export class EditComponent implements OnInit {
       responsible: '',
       description: '',
       severity: '',
-      status: ''
+      status: '',
+      creationDate: ''
     });
   }
 
-  updateIssue(title, responsible, description, severity, status) {
+  updateIssue(title, responsible, description, severity, status, creationDate) {
 
-    console.log('Issue updated: ', this.id, title, responsible, description, severity, status);
+    console.log('Issue updated: ', this.id, title, responsible, description, severity, status, creationDate);
 
-    this.issueService.updateIssue(this.id, title, responsible, description, severity, status).subscribe(() => {
+    this.issueService.updateIssue(this.id, title, responsible, description, severity, status, creationDate).subscribe(() => {
       this.snackBar.open('Issue updated successfully', 'OK', {
         duration: 3000,
       });

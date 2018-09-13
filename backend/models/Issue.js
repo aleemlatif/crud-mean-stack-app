@@ -18,6 +18,9 @@ let Issue = new Schema({
   status: {
     type: String,
     default: 'Open'
+  },
+  creationDate: {
+    type: Date
   }
 });
 
