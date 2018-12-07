@@ -15,6 +15,7 @@ export class ListComponent implements OnInit {
 
   issues: Issue[];
   fieldsAndCols: any[];
+  displayedColumns = ['title', 'responsible', 'severity', 'status', 'actions'];
   first = 0;
   constructor(private issueService: IssueService, private router: Router, private http: HttpClient) {
   }

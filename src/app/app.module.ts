@@ -2,7 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {NgModule} from '@angular/core';
 import {RouterModule, Routes} from '@angular/router';
 import {HttpClientModule} from '@angular/common/http';
-import { ReactiveFormsModule } from '@angular/forms';
+import {ReactiveFormsModule} from '@angular/forms';
 
 import {
   MatToolbarModule,
@@ -19,7 +19,7 @@ import {
 } from '@angular/material';
 
 import {DataTableModule, SharedModule, OrderListModule} from 'primeng/primeng';
-import { TableModule } from 'primeng/table';
+import {TableModule} from 'primeng/table';
 
 import {AppComponent} from './app.component';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
