@@ -1,5 +1,5 @@
-<div>
-  <br>
+<div class="clearfix">
+
   <mat-card>
     <section class="mat-typography">
       <h2>Update Issue</h2>
@@ -13,9 +13,17 @@
       <mat-form-field class="field-full-width">
         <input placeholder="Responsible" matInput formControlName="responsible" #responsible>
       </mat-form-field>
-      <mat-form-field class="field-full-width">
-        <textarea placeholder="Description" matInput formControlName="description" #description></textarea>
-      </mat-form-field>
+
+
+      <!--<mat-form-field class="field-full-width">
+        <textarea matInput placeholder="Description" formControlName="description" #description></textarea>
+      </mat-form-field>-->
+
+      <label for="description">Description</label>
+      <p-editor #description name="description" id="description" formControlName="description" placeholder="Please type description"
+                [style]="{'height':'320px'}" styleClass="editor-dimensions"
+                (onTextChange)="onTextChanged($event)" onSelectionChange="onSelectionChanged"></p-editor>
+
       <mat-form-field  class="field-full-width">
         <mat-select placeholder="Severity" formControlName="severity" #severity [(value)]="selectedSeverity">
           <mat-option value="Low" >Low</mat-option>
@@ -23,6 +31,7 @@
           <mat-option value="High">High</mat-option>
         </mat-select>
       </mat-form-field>
+
       <mat-form-field class="field-full-width">
         <mat-select placeholder="Status" formControlName="status" #status [(value)]="selectedStatus">
           <mat-option value="Open">Open</mat-option>
@@ -30,6 +39,11 @@
           <mat-option value="Done">Done</mat-option>
         </mat-select>
       </mat-form-field>
+
+      <label for="creationDate">Description</label>
+      <p-calendar name="creationDate" id="creationDate" formControlName="creationDate" dateFormat="dd-mm-yyyy"></p-calendar>
+
+      <br><br>
       <mat-divider></mat-divider>
       <br><br>
       <button mat-raised-button color="accent" routerLink="/list">Back</button>&nbsp;

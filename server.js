@@ -61,6 +61,7 @@ router.route('/issues/update/:id').post((req, res) => {
       issue.description = req.body.description;
       issue.severity = req.body.severity;
       issue.status = req.body.status;
+      issue.creationDate = req.body.creationDate;
 
       console.log('Issue for update:', issue);
 

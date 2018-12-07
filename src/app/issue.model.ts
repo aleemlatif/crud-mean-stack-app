@@ -1,3 +1,5 @@
+import DateTimeFormat = Intl.DateTimeFormat;
+
 export interface Issue {
   id: String;
   title: String;
@@ -5,4 +7,5 @@ export interface Issue {
   description: String;
   severity: String;
   status: String;
+  creationDate: Date;
 }

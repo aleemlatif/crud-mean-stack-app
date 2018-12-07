@@ -28,12 +28,14 @@ export class IssueService {
   /**
    * add an issue
    */
-  addIssue(title, responsible, description, severity) {
+  addIssue(title, responsible, description, severity, status, creationDate) {
     const issue = {
       title: title,
       responsible: responsible,
       description: description,
-      severity: severity
+      severity: severity,
+      status: status,
+      creationDates: creationDate
     };
     return this.http.post(`${this.uri}/issues/add`, issue);
   }
@@ -41,13 +43,14 @@ export class IssueService {
   /**
    * update an issue
    */
-  updateIssue(id, title, responsible, description, severity, status) {
+  updateIssue(id, title, responsible, description, severity, status, creationDate) {
     const issue = {
       title: title,
       responsible: responsible,
       description: description,
       severity: severity,
-      status: status
+      status: status,
+      creationDates: creationDate
     };
     return this.http.post(`${this.uri}/issues/update/${id}`, issue);
   }

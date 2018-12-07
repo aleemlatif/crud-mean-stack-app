@@ -14,7 +14,7 @@ import { IssueService } from '../../issue.service';
 export class CreateComponent implements OnInit {
 
   createForm: FormGroup;
-
+  selectedStatus: String;
 
   constructor(private issueService: IssueService, private fb: FormBuilder, private router: Router) {
 
@@ -22,15 +22,18 @@ export class CreateComponent implements OnInit {
       title: ['', Validators.required],
       responsible: '',
       description: '',
-      severity: ''
+      severity: '',
+      status: '',
+      creationDate: ''
     });
   }
 
   ngOnInit() {
+    this.selectedStatus = 'Open';
   }
 
-  addIssue(title, responsible, description, severity) {
-    this.issueService.addIssue(title, responsible, description, severity).subscribe(() => {
+  addIssue(title, responsible, description, severity, status, creationDate) {
+    this.issueService.addIssue(title, responsible, description, severity, status, creationDate).subscribe(() => {
       this.router.navigate(['/list']);
     });
   }

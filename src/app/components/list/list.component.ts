@@ -15,7 +15,7 @@ export class ListComponent implements OnInit {
 
   issues: Issue[];
   fieldsAndCols: any[];
-  displayedColumns = ['title', 'responsible', 'severity', 'status', 'actions'];
+  displayedColumns = ['title', 'responsible', 'description', 'severity', 'status', 'creationDate', 'actions'];
   first = 0;
   constructor(private issueService: IssueService, private router: Router, private http: HttpClient) {
   }
@@ -24,8 +24,10 @@ export class ListComponent implements OnInit {
     this.fetchIssues();
     this.fieldsAndCols = [{fieldName: 'title', colHeader: 'title'},
       {fieldName: 'responsible', colHeader: 'responsible'},
+      {fieldName: 'description', colHeader: 'description'},
       {fieldName: 'severity', colHeader: 'severity'},
       {fieldName: 'status', colHeader: 'status'},
+      {fieldName: 'creationDate', colHeader: 'creationDate'},
       {fieldName: 'actions', colHeader: 'actions'}
     ];
   }

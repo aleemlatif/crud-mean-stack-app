@@ -7,7 +7,8 @@
     <br><br>
     <h3>PrimeNG - p-table/ng-template</h3>
     <!-- start : p-table -->
-    <p-table [columns]="fieldsAndCols" [value]="issues" sortMode="multiple" [paginator]="true" [rows]="2" [first]="first" class="STTable">
+    <p-table [columns]="fieldsAndCols" [value]="issues" sortMode="multiple" [paginator]="true" [rows]="3"
+             [first]="first" class="STTable">
 
       <ng-template pTemplate="header" let-columns>
         <tr>
@@ -38,63 +39,71 @@
     </p-table>
     <!-- // end : p-table -->
 
+    <!-- start : mat-table -->
+    <!--
+    <table mat-table [dataSource]="issues">
+      <ng-container matColumnDef="title">
+        <th mat-header-cell *matHeaderCellDef> Title</th>
+        <td mat-cell *matCellDef="let element"> {{element.title}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="responsible">
+        <th mat-header-cell *matHeaderCellDef> Responsible</th>
+        <td mat-cell *matCellDef="let element"> {{element.responsible}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="description">
+        <th mat-header-cell *matHeaderCellDef> Description</th>
+        <td mat-cell *matCellDef="let element"> {{element.description}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="severity">
+        <th mat-header-cell *matHeaderCellDef> Severity</th>
+        <td mat-cell *matCellDef="let element"> {{element.severity}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef> Status</th>
+        <td mat-cell *matCellDef="let element"> {{element.status}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="creationDate">
+        <th mat-header-cell *matHeaderCellDef> creationDate</th>
+        <td mat-cell *matCellDef="let element"> {{element.creationDate}}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="actions">
+        <th mat-header-cell *matHeaderCellDef class="mat-column-right"> Actions</th>
+        <td mat-cell *matCellDef="let element" class="mat-column-right">
+          <button mat-button color="primary" (click)="editIssue(element._id)">Edit</button>
+          <button mat-button color="warn" (click)="deleteIssue(element._id)">Delete</button>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+    </table>
+    <!-- // end : mat-table -->
+
+
     <!-- start : p-dataTable -->
-    <br><br>
+    <!--<br><br>
     <mat-divider></mat-divider>
     <br><br>
     <h3>PrimeNG - p-table/p-column</h3>
     <p-dataTable [value]="issues">
       <p-column field="title" header="title" [sortable]="true"></p-column>
       <p-column field="responsible" header="responsible" [sortable]="true"></p-column>
+      <p-column field="description" header="description" [sortable]="true"></p-column>
       <p-column field="severity" header="severity"></p-column>
       <p-column field="status" header="status"></p-column>
-      <p-column  header="actions">
+      <p-column header="actions">
         <div>
-              <button mat-button color="primary" (click)="editIssue(issues['_id'])">Edit</button>
-              <button mat-button color="warn" (click)="deleteIssue(issues['_id'])">Delete</button>
+          <button mat-button color="primary" (click)="editIssue(issues['_id'])">Edit</button>
+          <button mat-button color="warn" (click)="deleteIssue(issues['_id'])">Delete</button>
         </div>
       </p-column>
-    </p-dataTable>
+    </p-dataTable>-->
     <!-- // end : p-dataTable -->
-
-    <!-- start : mat-table -->
-    <br><br>
-    <mat-divider></mat-divider>
-    <br><br>
-    <h3>Material Design - table</h3>
-    <table mat-table [dataSource]="issues">
-    <ng-container matColumnDef="title">
-      <th mat-header-cell *matHeaderCellDef> Title </th>
-      <td mat-cell *matCellDef="let element"> {{element.title}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="responsible">
-      <th mat-header-cell *matHeaderCellDef> Responsible </th>
-      <td mat-cell *matCellDef="let element"> {{element.responsible}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="severity">
-      <th mat-header-cell *matHeaderCellDef> Severity </th>
-      <td mat-cell *matCellDef="let element"> {{element.severity}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="status">
-      <th mat-header-cell *matHeaderCellDef> Status </th>
-      <td mat-cell *matCellDef="let element"> {{element.status}} </td>
-    </ng-container>
-
-    <ng-container matColumnDef="actions">
-      <th mat-header-cell *matHeaderCellDef class="mat-column-right"> Actions </th>
-      <td mat-cell *matCellDef="let element" class="mat-column-right">
-        <button mat-button color="primary" (click)="editIssue(element._id)">Edit</button>
-        <button mat-button color="warn" (click)="deleteIssue(element._id)">Delete</button>
-      </td>
-    </ng-container>
-
-    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-  </table>
-    <!-- // end : mat-table -->
-
   </mat-card>
 </div>
